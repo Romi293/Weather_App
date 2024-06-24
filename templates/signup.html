@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Sign Up to weather app</h2>
+
+    <form action="/signup" method="post">
+        <div class="container">
+            <p>Please fill in this form to create an account</p>
+            <hr>
+
+            <h3 name="username"><b>Username</b></h3>
+            <input type="text" placeholder="Enter Username" name="new_username" required>
+
+            <h3 name="psw"><b>Password</b></h3>
+            <input type="password" placeholder="Enter Password" name="new_password" required><br><br>
+
+            <button type="submit" class="signupbtn">Sign Up</button>
+            {% if user_already_exist %}
+            <p>
+                <h3>Username already exists</h3>
+            </p>
+            {% endif %}
+            {% if success_signup %}
+            <p>
+                <h3>Signup successfully</h3>
+            </p>
+            {% endif %}
+        </div>
+        </div>
+    </form>
+
+
+</body>
+
+</html>
