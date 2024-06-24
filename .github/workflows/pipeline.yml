@@ -42,7 +42,7 @@ jobs:
 
       - name: Update Kubernetes manifest
         run: |
-          sed -i 's|image: .*$|image: '"${{ secrets.DOCKERHUB_USERNAME }}/weather_app:${{ env.TAG }}"'|' deployment.yaml
+          sed -i 's|image: .*$|image: '"${{ secrets.DOCKERHUB_USERNAME }}/weather_app:${{ env.TAG }}"'|' ArgoCD_Manifests/.github/workflows/deployment.yaml
 
       - name: Commit and push changes
         run: |
