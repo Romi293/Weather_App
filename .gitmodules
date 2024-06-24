@@ -1,0 +1,3 @@
+[submodule "GitHub_Actions_Docker/GitHub_Actions_Docker/Weather_App"]
+	path = GitHub_Actions_Docker/GitHub_Actions_Docker/Weather_App
+	url = https://github.com/Romi293/Weather_App.git
