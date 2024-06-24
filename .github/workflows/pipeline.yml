@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Romi293/ArgoCD_Manifests
-          token: ${{ secrets.SECOND_REPO_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           path: argocd-manifests
 
       - name: Update Kubernetes manifest
