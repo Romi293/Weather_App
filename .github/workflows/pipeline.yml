@@ -33,6 +33,12 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/weather_app:${{ env.TAG }}
 
+      - name: Checkout second repository
+        uses: actions/checkout@v2
+        with:
+          repository: Romi293/ArgoCD_Manifests
+          token: ${{ secrets.SECOND_REPO_TOKEN }}
+          path: argocd-manifests
 
       - name: Update Kubernetes manifest
         run: |
@@ -40,7 +46,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          # cd argocd-repo
+          cd argocd-manifests
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add .
