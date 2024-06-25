@@ -44,6 +44,10 @@ jobs:
         run: |
           sed -i 's|image: .*$|image: '"${{ secrets.DOCKERHUB_USERNAME }}/weather_app:${{ env.TAG }}"'|' argocd-manifests/deployment.yaml
 
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Commit and push changes
         run: |
           cd argocd-manifests
